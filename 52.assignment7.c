@@ -30,7 +30,7 @@ int main(){
                         // initially it is 0 as user yet to find the number.
   // iterate in a loop, as long as not found and chance_count <= MAX_CHANCES
   // Instruction: Offcourse, it is your task to write the condition for the while loop
-  while(match == 0 && chance_count <= 7)/*as long as match is false and chances are <= MAX_CHANCES*/
+  while(match == 0 && chance_count <= MAX_CHANCES)/*as long as match is false and chances are <= MAX_CHANCES*/
   {
     printf("Enter your number: "); // prompt the user to enter their guess.
     scanf("%d", &user_guess);// get that input in user_guess
@@ -54,7 +54,7 @@ int main(){
 	else{
      printf("Bingo!! You got it correct %d is the number.\n", user_guess); // You will be here only if the user input matches
      printf("You guessed that in %d chances\n", chance_count);// with the number guessed by your program.
-      // complete this section...                     // 20 marks
+     break;  // complete this section...                     // 20 marks
     }
     printf("\n\n");
     chance_count++;  // increment the chance_count for the next iteration.
@@ -64,8 +64,14 @@ int main(){
   // the number correctly or they have failed to guess that in all 7 steps.
   // For the second case you need to print "Game Over" message.
   // if not match, then print "Game over!!! Try to be Mathemetical."
-  if (MAX_CHANCES > 7 || chance_count <= 7 && user_guess == computer_guess){           // 10 marks
-    printf("Game Over");// print the game over message.                 // 5 marks
+  if (chance_count > MAX_CHANCES){           // 10 marks
+    printf("Game Over!!! Try to be Mathematical");// print the game over message.                 // 5 marks
   }
+  if (chance_count <= 3)
+	  printf("You are a super duper Ninja!\n");
+  else if (chance_count > 3 && chance_count <= 5)
+	  printf ("You are a crazy ninja!\n");
+  else if (chance_count == 6 || chance_count == 7)
+	  printf ("You have potential to be a ninja\n");
   return 0;
 }

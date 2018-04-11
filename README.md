@@ -1,2 +1,3 @@
 # Udemy-C-Programming-Class
-This repositry contains my Udemy course examples and assignments.
+This repository contains my Udemy course examples and assignments.
+Each file builds on the previous topic, whilst delving deeper into C.

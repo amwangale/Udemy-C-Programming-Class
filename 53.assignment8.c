@@ -10,7 +10,7 @@ int main() {
 	int score = 0;
 
 	printf("Computer rolled two dice... Guess the sum\n");
-	printf("Enter any value <= 0 to terminate\n\n");
+	printf("Enter any <=0 value to terminate\n");
 	user_sum = 1;
 	while (user_sum > 0)
 	{
@@ -25,29 +25,30 @@ int main() {
 		if(computer_sum == user_sum)
 		{
 			score += 10;
-			printf("The computer guessed %d!\n\n", computer_sum);
+			printf("The computer guessed %d!\n", computer_sum);
 			printf("Bravo! You were correct! +10\n");
 			total_correct++;
 			printf("Total correct: %d\n", total_correct);
 			printf("Total_incorrect: %d\n", total_incorrect);
-			printf("Score: %d\n\n", score);
+			printf("Score: %d\n", score);
 		}
 		else if(computer_sum != user_sum)
 		{
 			score -= 5;
-			printf("The computer guessed %d!\n\n", computer_sum);
+			printf("The computer guessed %d!\n", computer_sum);
 			printf("Darn!!! Bad attempt, -5\n");
-			total_incorrect++;
+			total_incorrect--;
             		printf("Total correct: %d\n", total_correct);
             		printf("Total_incorrect: %d\n", total_incorrect);
-            		printf("Score: %d\n\n", score);
-		}
+            		printf("Score: %d\n", score);
+		}	
 	}	
 	while (user_sum <= 0)
 	{
 		printf("Total correct: %d\n", total_correct);
         printf("Total_incorrect: %d\n", total_incorrect);
         printf("Score: %d\n", score);
+		break;
 	}
 	printf("\n\n");
 	printf("Thankyou for playing!\n");
